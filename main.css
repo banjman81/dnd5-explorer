@@ -1,0 +1,33 @@
+.main{
+    height: 81vh;
+    overflow-y: scroll;
+    display: flex;
+    justify-content: space-around;
+}
+.card{
+    text-align: center;
+    height: fit-content;
+    width: 300px;
+    background-color: rgb(19, 19, 19);
+    color: white;
+    margin: 10px;
+}
+.card-image{
+    max-width:80%;
+    max-height:250px;
+    margin: 10px 10%;
+    width: auto;
+    height: auto
+    /* border-radius: 5px; */
+}
+.card-body a{
+    color: white;
+    text-decoration: none;
+}
+.main::-webkit-scrollbar {
+    width: 10px;
+}
+.main::-webkit-scrollbar-thumb {
+    background-color: #6e0808ce;
+    border-radius: 3px;
+}
