@@ -1,20 +1,19 @@
 .main{
     height: 81vh;
     overflow-y: scroll;
-    display: flex;
-    justify-content: space-around;
+    overflow-x: hidden;
 }
 .card{
     text-align: center;
     height: fit-content;
-    width: 300px;
+    width: 25vw;
     background-color: rgb(19, 19, 19);
     color: white;
     margin: 10px;
 }
 .card-image{
     max-width:80%;
-    max-height:250px;
+    /* height:250px; */
     margin: 10px 10%;
     width: auto;
     height: auto
@@ -30,4 +29,22 @@
 .main::-webkit-scrollbar-thumb {
     background-color: #6e0808ce;
     border-radius: 3px;
+}
+.pc-btm{
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 10px;
+}
+.pc-top{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100vw;
+}
+.pc-top .card{
+    margin: 10 auto;
+}
+.holder-text{
+    height: 18vh;
+    font-size: 1vw;
 }
