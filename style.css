@@ -15,7 +15,7 @@ body{
 .main-nav-bar{
     width: 100vw;
     background-color: rgb(161, 1, 1);
-    height: 4vh;
+    height: 45px;
 }
 .super-top{
     display: flex;

@@ -1,7 +1,18 @@
-.main{
-    height: 81vh;
+.main-wrapper{
+    height: 85vh;
+    padding: 0;
     overflow-y: scroll;
+    background-color: rgba(0, 0, 0, 0.479);
     overflow-x: hidden;
+    margin: 0;
+}
+.main{
+    background-color: rgba(0, 0, 0, 0.795);
+    width: 90%;
+    margin: 0px auto;
+    padding: 20px;
+    min-height: 100%;
+    max-height: fit-content;
 }
 .card{
     text-align: center;
@@ -23,10 +34,10 @@
     color: white;
     text-decoration: none;
 }
-.main::-webkit-scrollbar {
+.main-wrapper::-webkit-scrollbar {
     width: 10px;
 }
-.main::-webkit-scrollbar-thumb {
+.main-wrapper::-webkit-scrollbar-thumb {
     background-color: #6e0808ce;
     border-radius: 3px;
 }
@@ -47,4 +58,47 @@
 .holder-text{
     height: 18vh;
     font-size: 1vw;
+}
+.text{
+    text-align: left;
+    padding: 0 10%;
+    width: 100%;
+    color: white;
+    margin-right:10%;
+}
+
+.intro:hover{
+    width: 80%;
+}
+.intro-holder{
+    width: 100%;
+}
+.center{
+    text-align: center;
+    color: white;
+}
+
+
+.transforming-img {
+    text-align: center;
+    margin: 50px;
+    list-style: none;
+}
+.transforming-img li {
+    margin: 10px;
+    display: inline-block;
+}
+.transforming-img li a {
+    padding: 5px;
+    display: inline-block;      
+    border: 1px solid #f2f2f2;
+}
+.transforming-img li img {
+    height: 250px;
+    display: block;
+}
+.transforming-img li img:hover  {
+    transform: scale(1.3);
+    transition: 500ms;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
