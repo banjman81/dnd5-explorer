@@ -220,8 +220,7 @@ async function attributes(){
         const ability = await rawAblt.json()
         $('.attr-list').append($(`
             <h3 class="stat-trigger" id="${ability.name}">${ability.name}</h3>
-                <span class="stat-info">${ability.desc}
-            </span>
+                <span class="stat-info">${ability.desc}</span>
         `))
     // console.log(ability)
     }
