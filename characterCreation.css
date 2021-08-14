@@ -59,8 +59,8 @@ input{
     border: 1px solid black;
     border-radius: 10px;
     position: absolute;
-    top: 65vh;
-    left: 35vw;
+    top: 45vh;
+    left: 60vw;
     width: 30vw;
 }
 .stat-trigger:hover{
@@ -91,6 +91,10 @@ input{
 .character-sub-info{
     width: 20%;
 }
-.stats-tabley{
-    font-size: 10px;
+.stats-table{
+    font-size: 20px;
+}
+.stats-table td{
+    width: fit-content;
+    color: rgba(255, 208, 0, 0.808);
 }

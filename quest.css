@@ -1,0 +1,41 @@
+.combat-log{
+    height: 50vh;
+    width: 40%;
+    background-color: rgba(128, 128, 128, 0.384);
+    text-align: center;
+    overflow-y: scroll;
+}
+
+.player-info{
+    height: 30vh;
+    width: 25%;
+    color: white;
+    background-color: rgba(78, 117, 52, 0.486);
+    text-align: center;
+}
+.mob-info{
+    height: 30vh;
+    width: 25%;
+    color: white;
+    text-align: center;
+    background-color: rgba(158, 20, 20, 0.418);
+}
+.quest-display{
+    display: flex;
+    justify-content: space-evenly;
+}
+.mob-img{
+    height: 100%;
+    opacity: 0.9;
+}
+.player-atk-log{
+    background-color: rgba(190, 250, 156, 0.5);
+    color: rgb(21, 53, 21);
+    width: 75%;
+}
+.mob-atk-log{
+   background-color: rgba(255, 192, 203, 0.5); 
+   color: rgb(70, 17, 17);
+   width: 75%;
+   margin-left: 25%;
+}

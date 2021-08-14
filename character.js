@@ -3,20 +3,88 @@ let playerCreated = false
 // 
 // 
 // 
-let playerName = ''
-let playerClass = ''
-let playerRace = ''
-let playerAlignment = ''
-let playerSTR = 0
-let playerDEX = 0
-let playerCON = 0
-let playerINT = 0
-let playerWIS = 0
-let playerCHA = 0
+let playerName = localStorage.getItem('playerName') != null ? localStorage.getItem('playerName') : ''
+let playerClass = localStorage.getItem('playerClass') != null ? localStorage.getItem('playerClass') : ''
+let playerRace = localStorage.getItem('playerRace') != null ? localStorage.getItem('playerRace') : ''
+let playerAlignment = localStorage.getItem('playerAlignment') != null ? localStorage.getItem('playerAlignment') : ''
+let playerSTR = localStorage.getItem('str') != null ? Number(localStorage.getItem('str')) : 0
+let playerDEX = localStorage.getItem('dex') != null ? Number(localStorage.getItem('dex')) : 0
+let playerCON = localStorage.getItem('con') != null ? Number(localStorage.getItem('con')) : 0
+let playerINT = localStorage.getItem('int') != null ? Number(localStorage.getItem('int')) : 0
+let playerWIS = localStorage.getItem('wis') != null ? Number(localStorage.getItem('wis')) : 0
+let playerCHA = localStorage.getItem('cha') != null ? Number(localStorage.getItem('cha')) : 0
+let playerWallet = localStorage.getItem('wallet') != null ? Number(localStorage.getItem('wallet')) : 50
 const regex = /[a-zA-z]/
 
 let counter = 1
-
+if(localStorage.getItem('playerCreated') == "true"){
+    $('.primary-selector').children().remove()
+                $('.alert-box').remove()
+                $('.submit-char').remove()
+                $('.primary-selector').append($(`
+                <div class="char-display">
+                    <h2>${playerName}<h2>
+                    <div class="character-info">
+                        <div class="character-sub-info">
+                        <table class="stats-table">
+                            <tbody>
+                                <tr>
+                                    <th>STR</th>
+                                    <td>${playerSTR}</td>
+                                </tr>
+                                <tr>
+                                    <th>DEX</th>
+                                    <td>${playerDEX}</td>
+                                </tr>
+                                <tr>
+                                    <th>CON</th>
+                                    <td>${playerCON}</td>
+                                </tr>
+                                <tr>
+                                    <th>INT</th>
+                                    <td>${playerINT}</td>
+                                </tr>
+                                <tr>
+                                    <th>WIS</th>
+                                    <td>${playerWIS}</td>
+                                </tr>
+                                <tr>
+                                    <th>CHA</th>
+                                    <td>${playerCHA}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        </div>
+                        <div><img src="asset/backgrounds/character-holder.jpg" alt="char"></img></div>
+                        <div class="character-sub-info">
+                            <table class="stats-table">
+                                <tbody>
+                                    <tr>
+                                        <th>Race</th>
+                                    </tr>
+                                    <tr>
+                                        <td>${playerRace}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Class</th>
+                                    </tr>
+                                    <tr>
+                                        <td>${playerClass}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Alignment</th>
+                                    </tr>
+                                    <tr>
+                                        <td>${playerAlignment}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+        `))
+}
 $('.submit-char').on('click', function(){
     $('.alert').remove()
     let rollCounter = 0
@@ -37,6 +105,7 @@ $('.submit-char').on('click', function(){
             }
             else if(regex.test($('#playerName').val()) === true){
                 playerName = $('#playerName').val()
+                localStorage.setItem('playerName', playerName)
                 $('.primary-selector').children().remove()
                 $('.alert-box').remove()
                 $('.primary-selector').append($(`
@@ -52,10 +121,11 @@ $('.submit-char').on('click', function(){
         else if(counter === 2){
             console.log($('.custom-select :selected').val())
             playerClass = $('.custom-select :selected').val()
+            localStorage.setItem('playerClass', playerClass)
             $('.primary-selector').children().remove()
             $('.alert-box').remove()
             $('.primary-selector').append($(`
-                <h2>Pick your class</h2>
+                <h2>Pick your race</h2>
                 <select class="custom-select race-menu">
                 </select>
             `))
@@ -65,11 +135,12 @@ $('.submit-char').on('click', function(){
         
         else if(counter === 3){
             console.log($('.custom-select :selected').val())
-            playerAlignment = $('.custom-select :selected').val()
+            playerRace = $('.custom-select :selected').val()
+            localStorage.setItem('playerRace', playerRace)
             $('.primary-selector').children().remove()
             $('.alert-box').remove()
             $('.primary-selector').append($(`
-                <h2>Pick your class</h2>
+                <h2>What is your alignment</h2>
                 <select class="custom-select alignment-menu">
                 </select>
             `))
@@ -79,6 +150,7 @@ $('.submit-char').on('click', function(){
         else if(counter === 4){
             console.log($('.custom-select :selected').val())
             playerAlignment = $('.custom-select :selected').val()
+            localStorage.setItem('playerAlignment', playerAlignment)
             $('.primary-selector').children().remove()
             $('.alert-box').remove()
             $('.primary-selector').append($(`
@@ -92,7 +164,6 @@ $('.submit-char').on('click', function(){
         else if(counter === 5){
             localStorage.removeItem('rollCheck')
             console.log($('.custom-select :selected').val())
-            playerAlignment = $('.custom-select :selected').val()
             $('.primary-selector').children().remove()
             $('.alert-box').remove()
             $('.primary-selector').append($(`
@@ -109,7 +180,8 @@ $('.submit-char').on('click', function(){
                 alert('Use all your points')
             }
             else{
-                playerCreated === true
+                playerCreated = true
+                localStorage.setItem('playerCreated', playerCreated)
                 $('.primary-selector').children().remove()
                 $('.alert-box').remove()
                 $('.submit-char').remove()
@@ -239,21 +311,32 @@ $('.primary-selector').on('click', 'h3', function(){
         console.log(typeof Number(statArr[$('.red').length - 1]))
         if($(this).attr('id') === 'STR'){
             playerSTR = Number(statArr[$('.red').length - 1])
+            localStorage.setItem('str', playerSTR)
         }
         else if($(this).attr('id') === 'DEX'){
             playerDEX = Number(statArr[$('.red').length - 1])
+            localStorage.setItem('dex', playerDEX)
+
         }
         else if($(this).attr('id') === 'CON'){
             playerCON = Number(statArr[$('.red').length - 1])
+            localStorage.setItem('con', playerCON)
+
         }
         else if($(this).attr('id') === 'INT'){
             playerINT = Number(statArr[$('.red').length - 1])
+            localStorage.setItem('int', playerINT)
+
         }
         else if($(this).attr('id') === 'WIS'){
             playerWIS = Number(statArr[$('.red').length - 1])
+            localStorage.setItem('wis', playerWIS)
+
         }
         else if($(this).attr('id') === 'CHA'){
             playerCHA = Number(statArr[$('.red').length - 1])
+            localStorage.setItem('cha', playerCHA)
+
         }
     }
 })

@@ -1,0 +1,35 @@
+[
+    {
+      "name": "Goblin",
+      "hp": 15,
+      "attack": 5,
+      "armor": 10,
+      "value": 10,
+      "image" : "https://www.dndbeyond.com/avatars/thumbnails/0/351/1000/1000/636252777818652432.jpeg"
+    },
+    {
+      "name": "Hobgoblin",
+      "hp": 25,
+      "attack": 6,
+      "armor": 12,
+      "value": 20,
+      "image": "https://i.pinimg.com/originals/b1/27/08/b1270827d2446bd4c1c0c0efb12f6863.jpg"
+    },
+    {
+      "name": "Ogre",
+      "hp": 35,
+      "attack": 7,
+      "armor": 14,
+      "value": 30,
+      "image": "https://www.dndbeyond.com/avatars/thumbnails/0/287/1000/1000/636252770700032248.jpeg"
+      
+    },
+    {
+      "name": "Owlbear",
+      "hp": 60,
+      "attack": 9,
+      "armor": 15,
+      "value": 100,
+      "image" : "http://vignette1.wikia.nocookie.net/rollplaydnd/images/b/b5/Owl_Bear_by_BenWootten.jpg/revision/latest?cb=20140518164041"
+    }
+]
