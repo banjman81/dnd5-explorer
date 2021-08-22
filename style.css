@@ -118,7 +118,7 @@ body{
         text-align: center;
     }
     .card{
-        width: 500px;
+        background-color: red;
     }
     .main{
         width:100vw;

@@ -102,3 +102,13 @@
     transition: 500ms;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
+@media screen and (max-width: 750px){
+    .card{
+        width: 500px;
+        height: fit-content;
+    }
+    .holder-text{
+        font-size: 20px;
+        height: fit-content;
+    }
+}
