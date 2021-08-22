@@ -44,6 +44,7 @@ body{
     vertical-align: bottom;
     font-size: 20px;
     font-weight: bold;
+    text-align: center;
     /* height: 50%; */
 }
 .right-nav-item:hover{
@@ -73,4 +74,76 @@ body{
 .foot{
     height: 10vh;
     background-image: linear-gradient(black, rgba(19, 19, 19, 0.911), black);
+}
+@media screen and (max-width: 750px){
+    .super-top{
+        visibility: hidden;  
+        height: 0;
+    }
+    .head{
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+    body{
+        width: fit-content;
+    }
+    .main-nav-bar{
+        width: 100%;
+        margin: 0;
+        height: 5vh;
+    }
+    .right-nav-bar{
+        width: 100vw;
+        justify-content: space-evenly ;
+    }
+    .right-nav-item{
+        width: 25%;
+    }
+    .active:hover{
+        display: none;
+    }
+    .active{
+        border-top: 1px solid rgba(0, 0, 0, 0.2);
+        border-left: 1px solid rgba(0, 0, 0, 0.2);
+        border-right: 1px solid rgba(0, 0, 0, 0.2);
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        background-color: none;
+        color: gold;
+
+    }
+    .pc-btm{
+        flex-direction: column;
+        text-align: center;
+    }
+    .card{
+        width: 500px;
+    }
+    .main{
+        width:100vw;
+        height:fit-content;
+        margin: 0;
+        padding: 0;
+        overflow: visible;
+    }
+    .main-wrapper::-webkit-scrollbar {
+        display: none;
+        width: 0px;
+    }
+    .pc span{
+        display: none;
+    }
+    .pc:after{
+        content: 'PC';
+    }
+    .pc{
+        width: fit-content;
+    }
+    .mob-img{
+        width: 15vw;
+    }
+    .card{
+        width: 500px;
+    }
 }

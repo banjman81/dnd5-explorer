@@ -6,7 +6,7 @@ table{
 .creation-wrapper{
     background-color: rgba(0, 0, 0, 0.815);
     color: white;
-    width: 800px;
+    width: 85%;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -97,4 +97,10 @@ input{
 .stats-table td{
     width: fit-content;
     color: rgba(255, 208, 0, 0.808);
+}
+@media screen and (max-width: 950%) {
+    .creation-wrapper{
+        max-width: 200px;
+        background-color: white;
+    }
 }

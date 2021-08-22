@@ -2,6 +2,7 @@ let mobName = ''
 let mobHp = 0
 let mobArmor = 0
 let mobAttack = 0
+let mobValue = 0
 let playerHp = 0
 let playerAttack = 0
 let playerChance = 0
@@ -15,6 +16,7 @@ async function loadEnemy(n){
     mobHp = data[n].hp
     mobArmor = data[n].armor
     mobAttack = data[n].attack
+    mobValue = data[n].value
     $('.mob-info').append($(`
     <img class="mob-img" src='${data[n].image}'></img>
     <table>
@@ -75,19 +77,42 @@ if(localStorage.getItem('playerCreated') == "true"){
 loadEnemy(getRandomNum(0, 3))
 
 $('.attack').on('click', function(){
-    const hit = getRandomNum(1,20)+playerChance
+    const hit = getRandomNum(1 ,20)
     const mobHit = getRandomNum(1,20)
     let playerDamage = getRandomNum(1,6) + playerAttack
     let mobDamage = mobAttack
-    if(hit >= mobArmor){
+    if(hit+playerChance >= mobArmor){
         console.log(hit, 'hit')
-        $('.combat-log').append($(`
-            <div class="player-atk-log">
-                <p>Your attck(${hit}) hit ${mobName} for ${playerDamage}</p>
-            </div>
-        `))
-        mobHp -= playerDamage
+        if(hit == 20){
+            $('.combat-log').append($(`
+                <div class="player-atk-log">
+                    <p>Your attck(${hit + playerChance}) hits ${mobName} critically for ${playerDamage*2}</p>
+                </div>
+            `))
+            mobHp -= playerDamage*2
+
+        }
+        else{
+                $('.combat-log').append($(`
+                <div class="player-atk-log">
+                    <p>Your attck(${hit + playerChance}) hit ${mobName} for ${playerDamage}</p>
+                </div>
+            `))
+            mobHp -= playerDamage
+        }
+        
         $('.mob-hp').text(mobHp)
+        if(mobHp < 1){
+            $('.quest-display').children().remove()
+            $('.attack').remove()
+            $('.quest-display').append($(`
+                <img  class ="m-pass" src="https://c.tenor.com/dX6HCWiwMGoAAAAM/clapping-hands-pepe-the-frog.gif">
+            `))
+            playerWallet += mobValue
+            localStorage.setItem('wallet', playerWallet)
+            console.log(playerWallet)
+            return
+        }
     }
     else{
         console.log(hit, 'miss')
@@ -119,6 +144,17 @@ function mobAction(a, b){
         `))
         playerHp -= b
         $('.player-hp').text(playerHp)
+        if(playerHp < 1){
+            $('.quest-display').children().remove()
+            $('.attack').remove()
+            $('.quest-display').append($(`
+                <img  class ="m-fail" src="https://i.ytimg.com/vi/KydaSVnyoNY/maxresdefault.jpg">
+            `))
+            playerWallet -= 20
+            localStorage.setItem('wallet', playerWallet)
+            console.log(playerWallet)
+            return
+        }
     }
     else{
         console.log(a, 'Mmiss')

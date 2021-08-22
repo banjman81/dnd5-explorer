@@ -78,6 +78,12 @@ if(localStorage.getItem('playerCreated') == "true"){
                                     <tr>
                                         <td>${playerAlignment}</td>
                                     </tr>
+                                    <tr>
+                                        <th>Gold</th>
+                                    </tr>
+                                    <tr>
+                                        <td>${playerWallet}</td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -222,21 +228,33 @@ $('.submit-char').on('click', function(){
                         </div>
                         <div><img src="asset/backgrounds/character-holder.jpg" alt="char"></img></div>
                         <div class="character-sub-info">
-                            <table>
-                                <tbody>
-                                    <tr>
-                                        <th>Race</th>
-                                        <td>${playerSTR}</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Class</th>
-                                        <td>${playerDEX}</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Alignment</th>
-                                        <td>${playerCON}</td>
-                                    </tr>
-                                </tbody>
+                            <table  class="stats-table">
+                            <tbody>
+                                <tr>
+                                    <th>Race</th>
+                                </tr>
+                                <tr>
+                                    <td>${playerRace}</td>
+                                </tr>
+                                <tr>
+                                    <th>Class</th>
+                                </tr>
+                                <tr>
+                                    <td>${playerClass}</td>
+                                </tr>
+                                <tr>
+                                    <th>Alignment</th>
+                                </tr>
+                                <tr>
+                                    <td>${playerAlignment}</td>
+                                </tr>
+                                <tr>
+                                    <th>Gold</th>
+                                </tr>
+                                <tr>
+                                    <td>${playerWallet}</td>
+                                </tr>
+                            </tbody>
                             </table>
                         </div>
                     </div>
