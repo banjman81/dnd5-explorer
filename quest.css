@@ -71,3 +71,12 @@
 .btn-primary:hover{
     background-color: rgb(184, 49, 49);
 }
+@media screen and (max-width:700px) {
+    
+    .mob-info{
+        height: 150px;
+    }
+    .player-info{
+        height: 150px;
+    }
+}

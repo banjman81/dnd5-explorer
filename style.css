@@ -75,7 +75,7 @@ body{
     height: 10vh;
     background-image: linear-gradient(black, rgba(19, 19, 19, 0.911), black);
 }
-@media screen and (max-width: 750px){
+@media screen and (max-width: 700px){
     .super-top{
         visibility: hidden;  
         height: 0;
@@ -142,8 +142,5 @@ body{
     }
     .mob-img{
         width: 15vw;
-    }
-    .card{
-        width: 500px;
     }
 }

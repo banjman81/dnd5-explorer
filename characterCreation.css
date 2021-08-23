@@ -91,6 +91,9 @@ input{
 .character-sub-info{
     width: 20%;
 }
+.char-img img{
+    width: 30vw;
+}
 .stats-table{
     font-size: 20px;
 }

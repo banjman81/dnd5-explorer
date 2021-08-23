@@ -56,7 +56,7 @@ if(localStorage.getItem('playerCreated') == "true"){
                         </table>
                         
                         </div>
-                        <div><img src="asset/backgrounds/character-holder.jpg" alt="char"></img></div>
+                        <div class="char-img"><img src="asset/backgrounds/character-holder.jpg" alt="char"></img></div>
                         <div class="character-sub-info">
                             <table class="stats-table">
                                 <tbody>

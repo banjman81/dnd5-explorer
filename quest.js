@@ -123,7 +123,7 @@ $('.attack').on('click', function(){
             $('.quest-display').children().remove()
             $('.attack').remove()
             $('.quest-display').append($(`
-                <img  class ="m-pass" src="https://c.tenor.com/dX6HCWiwMGoAAAAM/clapping-hands-pepe-the-frog.gif">
+            <a href="playerCharacter.html"><img  class ="m-pass" src="https://c.tenor.com/dX6HCWiwMGoAAAAM/clapping-hands-pepe-the-frog.gif"></a>
             `))
             playerWallet += mobValue
             localStorage.setItem('wallet', playerWallet)
@@ -165,7 +165,7 @@ function mobAction(a, b){
             $('.quest-display').children().remove()
             $('.attack').remove()
             $('.quest-display').append($(`
-                <img  class ="m-fail" src="https://i.ytimg.com/vi/KydaSVnyoNY/maxresdefault.jpg">
+                <a href="playerCharacter.html"><img  class ="m-fail" src="https://i.ytimg.com/vi/KydaSVnyoNY/maxresdefault.jpg"></a>
             `))
             playerWallet -= 20
             localStorage.setItem('wallet', playerWallet)
