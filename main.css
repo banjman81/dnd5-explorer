@@ -111,4 +111,7 @@
         font-size: 20px;
         height: fit-content;
     }
+    .transforming-img li img{
+        width: 85vw;
+    }
 }

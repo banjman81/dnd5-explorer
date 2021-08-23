@@ -74,6 +74,23 @@ function loadPlayer(){
 if(localStorage.getItem('playerCreated') == "true"){
     loadPlayer()
 }
+else{
+    $('.quest-display').remove()
+    $('.attack').remove()
+    $('.main').append($(`
+    <div class="creation-wrapper">
+        <div class="primary-selector">
+            <h2 class="white">Please create a character</h2>
+        </div>
+        <div>
+            <a href="playerCharacter.html" class="btn btn-primary">Create a character</a>
+        </div>
+        <div class="alert-box">
+
+        </div>
+    </div>
+    `))
+}
 loadEnemy(getRandomNum(0, 3))
 
 $('.attack').on('click', function(){

@@ -61,3 +61,13 @@
 .m-pass{
     width: 100%;
 }
+.white{
+    color: white;
+}
+.btn-primary{
+    background-color: rgb(148, 0, 0);
+    border: none;
+}
+.btn-primary:hover{
+    background-color: rgb(184, 49, 49);
+}
